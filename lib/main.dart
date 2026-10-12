@@ -52,8 +52,6 @@ class _MyHomePageState extends State<MyHomePage> {
     print(_currentFortune);
   }
 
-  
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -66,14 +64,18 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Column(
           mainAxisAlignment: .center,
           children: [
-            Text("Your fortune is:",
-            style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)
+            Text(
+              "Your fortune is:",
+              style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
             ),
-           Card(
-            child:  Text(
-              '${_currentFortune}',
-              style: Theme.of(context).textTheme.headlineMedium,
-            ),
+            Card(
+              child: Padding(
+                padding: const EdgeInsets.all(16.0),
+                child: Text(
+                  _currentFortune,
+                  style: Theme.of(context).textTheme.headlineMedium,
+                ),
+              ),
             ),
             ElevatedButton(
               onPressed: _randomFortune,
